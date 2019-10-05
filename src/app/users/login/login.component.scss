@@ -1,0 +1,11 @@
+@import 'src/assets/scss/color-palette.scss';
+
+.login-background {
+    background-color: $background-color;
+    height: 100%;
+    width: 100%;
+
+    img {
+        width: 20%;
+    }
+}
