@@ -1,4 +1,4 @@
-import { 
+import {
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
@@ -7,13 +7,14 @@ import {
     MatDialogModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
- } from '@angular/material';
- 
+    MatCardModule,
+    MatDividerModule
+} from '@angular/material';
+
 import { NgModule } from '@angular/core';
 
 @NgModule({
-    imports: [ 
+    imports: [
         MatInputModule,
         MatFormFieldModule,
         MatButtonModule,
@@ -22,9 +23,10 @@ import { NgModule } from '@angular/core';
         MatDialogModule,
         MatToolbarModule,
         MatIconModule,
-        MatCardModule
+        MatCardModule,
+        MatDividerModule
     ],
-    exports: [ 
+    exports: [
         MatInputModule,
         MatFormFieldModule,
         MatButtonModule,
@@ -32,7 +34,8 @@ import { NgModule } from '@angular/core';
         MatRadioModule,
         MatToolbarModule,
         MatIconModule,
-        MatCardModule
+        MatCardModule,
+        MatDividerModule
     ],
 })
 

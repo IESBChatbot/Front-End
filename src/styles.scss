@@ -2,14 +2,7 @@
 @import 'assets/scss/color-palette';
 @import 'assets/scss/material-icon';
 @import 'assets/scss/bootstrap-grid';
-
-html, body { height: 100%; }
-body {     
-    font-family: "BentonSans", "Helvetica Neue", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
-}
+// @import "~@fortawesome/fontawesome-free/css/all.css";
 
 .fx {
     display: flex;
@@ -18,3 +11,35 @@ body {
 .jc-c {
     justify-content: center;
 }
+
+.jc-sb {
+    justify-content: space-between;
+}
+
+.jc-se {
+    justify-content: space-evenly;
+}
+
+.ai-c {
+    align-items: center;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.danger {
+    color: #f44336;
+}
+
+.c-p {
+    cursor: pointer;
+}
+
+.pos-rel {
+    position: relative;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -1,11 +1,65 @@
 @import 'src/assets/scss/color-palette.scss';
 
-.login-background {
-    background-color: $background-color;
-    height: 100%;
-    width: 100%;
+.login {
+    .background-iesb {
+        height: 452px;
+        background:linear-gradient(rgba(255, 128, 6, 0.68), rgba(255, 0, 0, 0.71)), url("src/assets/img/iesb.jpg") center center no-repeat;
+        background-size: cover;
+    }
+
+    mat-card {
+        padding: 0px 16px;
+    }
 
     img {
-        width: 20%;
+        height: 20rem;
+    }
+
+    .bg-white {
+        background-color: white; 
+    }
+
+    .fb-color {
+        color: #4267b2;
+    }
+
+    .tt-color {
+        color: #1da1f2;
+    }
+
+    .yt-color {
+        color: #f00;
+    }
+
+    .fa-2 {
+        font-size: 2em;
+    }
+
+    .align-vert {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .sub-text {
+        font-size: 40px;
+        text-transform: uppercase;
+        background: -webkit-linear-gradient(rgba(255, 128, 6, 0.68), rgba(255, 0, 0, 0.71));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .title {
+        text-transform: uppercase;
+        margin-top: 40px;
+    }
+
+    .text-color {
+        color: gray;
+    }
+
+    .botoes {
+        padding: 20px 0;
     }
 }
