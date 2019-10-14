@@ -8,11 +8,13 @@ import { MaterialModule } from './material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AlunoOnlineComponent } from './aluno-online/aluno-online/aluno-online.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    AlunoOnlineComponent
   ],
   imports: [
     BrowserModule,
