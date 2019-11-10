@@ -1,0 +1,62 @@
+.chat {
+    height: 35rem;
+    width: 55rem;
+    position: fixed;
+    right: 29rem;
+    bottom: 11rem;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 3%;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+
+    .chatbot {
+        min-height: 26rem;
+        max-height: 26rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .rounded-pic {
+            background-color: #f44336;
+            color: white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+    
+            img {
+                padding-left: 6px;
+                padding-top: 3px;
+                height: 40px;
+            }
+    
+            i {
+                padding-left: 10px;
+                padding-top: 3px;
+                font-size: 3em;
+            }
+        }
+    
+        .dialogo {
+            background-color: #efefef;
+            min-height: 40px;
+            border-radius: 16px;
+            padding: 8px;
+        }
+    
+        .dialogo-aluno {
+            background-color: #f44336;
+            color: white;
+            min-height: 40px;
+            border-radius: 16px;
+            padding: 8px;
+        }
+    }
+    
+    .chatbot-input {
+        .send-button {
+            position: absolute;
+            top: 36%;
+            transform: translate(-50%, -50%);
+            left: 93%;
+        }
+    }
+}

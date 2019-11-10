@@ -1,5 +1,5 @@
 <mat-toolbar>
-  
+
   <div class="col-sm-2 title">
     <span class="title">
       ALUNO ONLINE
@@ -139,6 +139,16 @@
           </div>
         </div>
       </div>
+      <div>
+      </div>
+
+      <div class="chatbot-btn">
+        <button class="rounded-pic" mat-fab (click)="showChatbot = !showChatbot">
+          <img src="../../../assets/img/robot-icon.png">
+        </button>
+      </div>
+
+      <app-chatbot [hidden]="!showChatbot"></app-chatbot>
     </div>
   </div>
 </div>

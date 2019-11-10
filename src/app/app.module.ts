@@ -9,12 +9,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AlunoOnlineComponent } from './aluno-online/aluno-online/aluno-online.component';
+import { ChatbotComponent } from './aluno-online/chatbot/chatbot.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AlunoOnlineComponent
+    AlunoOnlineComponent,
+    ChatbotComponent
   ],
   imports: [
     BrowserModule,

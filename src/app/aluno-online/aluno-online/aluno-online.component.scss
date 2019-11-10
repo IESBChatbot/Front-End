@@ -78,4 +78,17 @@ mat-toolbar {
             transform: translate(-50%, -50%);
         }
     }
+
+    .chatbot-btn {
+        button {
+            position: fixed;
+            bottom: 4rem;
+        }
+        
+        img {
+            height: 40px;
+            margin-top: -8px;
+        }
+    }
+
 }

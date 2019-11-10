@@ -16,6 +16,7 @@ export class AlunoOnlineComponent implements OnInit {
 
   displayedColumns: string[] = ['nome', 'horario', 'sala'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  showChatbot: boolean = false;
   
   constructor() { }
 
