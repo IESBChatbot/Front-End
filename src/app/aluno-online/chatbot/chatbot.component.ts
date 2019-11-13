@@ -11,10 +11,9 @@ export class ChatbotComponent implements OnInit {
 
   chatbotForm: FormGroup;
   conversa: any[] = [];
+  container: any;
 
   constructor(private alunoOnlineService: AlunoOnlineService, private formBuilder: FormBuilder,) { }
-
-  @ViewChild('scrollMe', {static: true}) private myScrollContainer: ElementRef;
   
   ngOnInit() {
 
@@ -45,16 +44,10 @@ export class ChatbotComponent implements OnInit {
       let mensagem = x.message.split('\n');
       let texto = mensagem.shift();
 
-      console.log(this.conversa);
-
-      this.scrollToBottom();
+      setTimeout(() => {
+        this.container = document.getElementById("msgContainer");
+        this.container.scrollTop = this.container.scrollHeight;
+      }, 100);
     });
-  }
-
-  scrollToBottom(): void {
-    try {
-        this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
-    } catch(err) { }                 
-}
-
+  }             
 }
