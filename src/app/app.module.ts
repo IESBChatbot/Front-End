@@ -10,6 +10,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AlunoOnlineComponent } from './aluno-online/aluno-online/aluno-online.component';
 import { ChatbotComponent } from './aluno-online/chatbot/chatbot.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { ChatbotComponent } from './aluno-online/chatbot/chatbot.component';
     MaterialModule,
     BrowserAnimationsModule,
     AngularFontAwesomeModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

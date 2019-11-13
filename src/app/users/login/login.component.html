@@ -14,11 +14,13 @@
 
               <div class="row fx jc-c">
                 <div class="col-sm-8">
-                  <mat-form-field class="width-100" appearance="outline">
-                    <mat-icon matPrefix>perm_identity</mat-icon>
-                    <mat-label>Matrícula</mat-label>
-                    <input matInput placeholder="Placeholder">
-                  </mat-form-field>
+                  <form [formGroup]="form">
+                    <mat-form-field class="width-100" appearance="outline">
+                      <mat-icon matPrefix>perm_identity</mat-icon>
+                      <mat-label>Matrícula</mat-label>
+                      <input matInput placeholder="Placeholder" formControlName="matricula">
+                    </mat-form-field>
+                  </form>
                 </div>
               </div>
 
@@ -27,7 +29,7 @@
                   <mat-form-field class="width-100" appearance="outline">
                     <mat-icon matPrefix>lock</mat-icon>
                     <mat-label>Senha</mat-label>
-                    <input matInput placeholder="Placeholder">
+                    <input type="password" matInput placeholder="Placeholder">
                   </mat-form-field>
                 </div>
               </div>
@@ -39,12 +41,12 @@
               </div>
 
               <div class="row">
-                  <div class="col-sm-12 fx jc-c">
-                    <p class="text-color">Esqueceu sua senha? 
-                      <span class="danger c-p">Clique aqui!</span>
-                    </p>
-                  </div>
+                <div class="col-sm-12 fx jc-c">
+                  <p class="text-color">Esqueceu sua senha?
+                    <span class="danger c-p">Clique aqui!</span>
+                  </p>
                 </div>
+              </div>
 
               <div class="row fx jc-se botoes">
                 <button mat-fab class="bg-white">
