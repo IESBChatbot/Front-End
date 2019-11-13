@@ -23,4 +23,8 @@ export class AlunoOnlineComponent implements OnInit {
   ngOnInit() {
   }
 
+  setLocalStorage() {
+
+    localStorage.setItem('sessionKey', localStorage.getItem("matricula") + Date.parse(new Date().toString()));
+  }
 }

@@ -1,35 +1,33 @@
 <div class="chat">
-  <div class="chatbot">
-    <div class="row mb--16">
-      <div class="col-sm-2">
+  <div class="chatbot" #scrollMe>
+    <div class="row mb--16" *ngFor="let i of conversa">
+      <div class="col-sm-2" *ngIf="i.tulio">
         <div class="rounded-pic">
           <img src="../../../assets/img/robot-icon.png">
         </div>
       </div>
 
-      <div class="col-sm-8">
+      <div class="col-sm-8" *ngIf="i.tulio">
         <div class="row">
           Túlio
         </div>
         <div class="row dialogo">
-          Olá! Meu nome é Túlio, como posso te ajudar?
+          {{i.texto}}
         </div>
       </div>
-    </div>
 
-    <div class="row mb--16">
-      <div class="col-sm-2"></div>
+      <div class="col-sm-2" *ngIf="!i.tulio"></div>
 
-      <div class="col-sm-8">
+      <div class="col-sm-8" *ngIf="!i.tulio">
         <div class="row ta-right">
-          Túlio
+          Aluno
         </div>
         <div class="row dialogo-aluno">
-          Olá! Meu nome é Túlio, como posso te ajudar?
+          {{i.texto}}
         </div>
       </div>
 
-      <div class="col-sm-2">
+      <div class="col-sm-2" *ngIf="!i.tulio">
         <div class="rounded-pic">
           <i class="fa fa-user" aria-hidden="true"></i>
         </div>
@@ -39,14 +37,16 @@
 
   <div class="row chatbot-input pos-rel">
     <div class="col-sm-11">
-      <mat-form-field class="width-100" appearance="outline">
-        <mat-label>Digite aqui</mat-label>
-        <input matInput placeholder="Placeholder">
-      </mat-form-field>
+      <form [formGroup]="chatbotForm">
+        <mat-form-field class="width-100" appearance="outline">
+          <mat-label>Digite aqui</mat-label>
+          <input matInput formControlName="texto">
+        </mat-form-field>
+      </form>
     </div>
 
     <div class="col-sm-1 send-button">
-      <button type="button" mat-icon-button>
+      <button type="button" mat-icon-button (click)="enviarMensagem(chatbotForm.get('texto').value, false)">
         <mat-icon>send</mat-icon>
       </button>
     </div>

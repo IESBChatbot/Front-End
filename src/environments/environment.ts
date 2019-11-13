@@ -3,6 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
+  api: 'http://2c362738.ngrok.io/dialogflow/text/',
   production: false
 };
 

@@ -13,12 +13,12 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private _formBuilder: FormBuilder,
+    private formBuilder: FormBuilder,
   ) { }
 
   ngOnInit() {
     
-    this.form = this._formBuilder.group({
+    this.form = this.formBuilder.group({
       matricula: ['', Validators.required]
     });
   }
@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
 
     localStorage.clear();
     localStorage.setItem('matricula', this.form.get('matricula').value);
-    localStorage.setItem('matKey', this.form.get('matricula').value + Date.parse(new Date().toString()));
     
     this.router.navigate(['/aluno-online']);
   }

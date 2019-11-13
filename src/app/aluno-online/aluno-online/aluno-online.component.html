@@ -139,16 +139,16 @@
           </div>
         </div>
       </div>
-      <div>
-      </div>
 
       <div class="chatbot-btn">
-        <button class="rounded-pic" mat-fab (click)="showChatbot = !showChatbot">
+        <button class="rounded-pic" mat-fab (click)="showChatbot = !showChatbot; setLocalStorage()">
           <img src="../../../assets/img/robot-icon.png">
         </button>
       </div>
 
-      <app-chatbot [hidden]="!showChatbot"></app-chatbot>
+      <div *ngIf="showChatbot">
+        <app-chatbot></app-chatbot>
+      </div>
     </div>
   </div>
 </div>
