@@ -47,6 +47,14 @@
     margin-bottom: 16px;
 }
 
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-label { 
+    color: black !important; 
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline {
+    color: black !important;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 

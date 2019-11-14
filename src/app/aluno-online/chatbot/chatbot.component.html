@@ -13,6 +13,11 @@
         </div>
         <div class="row dialogo">
           {{i.texto}}
+          <ul *ngIf="i.lista.length > 0">
+            <li *ngFor="let j of i.lista">
+              {{j}}
+            </li>
+          </ul>
         </div>
       </div>
 
@@ -37,7 +42,7 @@
 
   <div class="row chatbot-input pos-rel">
     <div class="col-sm-11">
-      <form [formGroup]="chatbotForm">
+      <form [formGroup]="chatbotForm" (keydown.enter)="enviarMensagem(chatbotForm.get('texto').value, false)">
         <mat-form-field class="width-100" appearance="outline">
           <mat-label>Digite aqui</mat-label>
           <input matInput formControlName="texto">

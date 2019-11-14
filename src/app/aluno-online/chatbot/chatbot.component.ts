@@ -16,9 +16,9 @@ export class ChatbotComponent implements OnInit {
   constructor(private alunoOnlineService: AlunoOnlineService, private formBuilder: FormBuilder,) { }
   
   ngOnInit() {
-
+    
     this.chatbotForm = this.formBuilder.group({
-      texto: ['', Validators.required]
+      texto: ['']
     });
 
     this.enviarMensagem('Oi', true);
@@ -26,28 +26,32 @@ export class ChatbotComponent implements OnInit {
 
   enviarMensagem(texto: string, primeiraConversa: boolean) {
 
-    this.conversa.push({ texto: texto, tulio: false });
+    if(texto) {
+      this.conversa.push({ texto: texto, tulio: false });
+    
+      let dados = {
+        message: texto,
+        attributes: {
+          matricula: localStorage.getItem("matricula")
+        }
+      };
   
-    let dados = {
-      message: texto,
-      attributes: {
-        matricula: localStorage.getItem("matricula")
-      }
-    };
-
-    this.alunoOnlineService.enviarMensagem(localStorage.getItem("sessionKey"), dados)
-    .subscribe((x: any) => {
-      this.chatbotForm.reset();
-
-      this.conversa.push({ texto: x.message, tulio: true });
-
-      let mensagem = x.message.split('\n');
-      let texto = mensagem.shift();
-
-      setTimeout(() => {
-        this.container = document.getElementById("msgContainer");
-        this.container.scrollTop = this.container.scrollHeight;
-      }, 100);
-    });
+      this.chatbotForm.controls['texto'].setValue('Carregando...');
+  
+      this.alunoOnlineService.enviarMensagem(localStorage.getItem("sessionKey"), dados)
+      .subscribe((x: any) => {
+        this.chatbotForm.controls['texto'].setValue('');
+  
+        let mensagem = x.message.includes('\n') ? x.message.split('\n') : [];
+  
+        let texto = mensagem.length > 0 ? mensagem.shift() : x.message;
+        this.conversa.push({ texto: texto, tulio: true, lista: mensagem });
+  
+        setTimeout(() => {
+          this.container = document.getElementById("msgContainer");
+          this.container.scrollTop = this.container.scrollHeight;
+        }, 100);
+      });
+    }
   }             
 }

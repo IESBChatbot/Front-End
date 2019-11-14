@@ -10,7 +10,6 @@ export class AlunoOnlineService {
   constructor( private httpClient: HttpClient ) { }
 
   enviarMensagem(session: string, params) {
-    console.log('entrou');
     return this.httpClient.post(environment.api + session, params);
   }
 }
