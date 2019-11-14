@@ -12,22 +12,25 @@ export class ChatbotComponent implements OnInit {
   chatbotForm: FormGroup;
   conversa: any[] = [];
   container: any;
+  matricula: string = localStorage.getItem("matricula");
+  carregamento: boolean = false;
 
   constructor(private alunoOnlineService: AlunoOnlineService, private formBuilder: FormBuilder,) { }
   
   ngOnInit() {
     
     this.chatbotForm = this.formBuilder.group({
-      texto: ['']
+      texto: [{value: '', disabled: this.carregamento}]
     });
 
-    this.enviarMensagem('Oi', true);
+    this.enviarMensagem('Oi');
   }
 
-  enviarMensagem(texto: string, primeiraConversa: boolean) {
+  enviarMensagem(texto: string) {
 
     if(texto) {
       this.conversa.push({ texto: texto, tulio: false });
+      this.carregamento = true;
     
       let dados = {
         message: texto,
@@ -41,6 +44,7 @@ export class ChatbotComponent implements OnInit {
       this.alunoOnlineService.enviarMensagem(localStorage.getItem("sessionKey"), dados)
       .subscribe((x: any) => {
         this.chatbotForm.controls['texto'].setValue('');
+        this.carregamento = false;
   
         let mensagem = x.message.includes('\n') ? x.message.split('\n') : [];
   

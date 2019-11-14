@@ -25,7 +25,7 @@
 
       <div class="col-sm-8" *ngIf="!i.tulio">
         <div class="row ta-right">
-          Aluno
+          Aluno: {{matricula}}
         </div>
         <div class="row dialogo-aluno">
           {{i.texto}}
@@ -42,7 +42,7 @@
 
   <div class="row chatbot-input pos-rel">
     <div class="col-sm-11">
-      <form [formGroup]="chatbotForm" (keydown.enter)="enviarMensagem(chatbotForm.get('texto').value, false)">
+      <form [formGroup]="chatbotForm" (keydown.enter)="enviarMensagem(chatbotForm.get('texto').value)">
         <mat-form-field class="width-100" appearance="outline">
           <mat-label>Digite aqui</mat-label>
           <input matInput formControlName="texto">
@@ -51,7 +51,7 @@
     </div>
 
     <div class="col-sm-1 send-button">
-      <button type="button" mat-icon-button (click)="enviarMensagem(chatbotForm.get('texto').value, false)">
+      <button type="button" mat-icon-button (click)="enviarMensagem(chatbotForm.get('texto').value)">
         <mat-icon>send</mat-icon>
       </button>
     </div>
