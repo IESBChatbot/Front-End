@@ -79,7 +79,20 @@ mat-toolbar {
         }
     }
 
-    .chatbot-btn {
+    .rasa-btn {
+        button {
+            position: fixed;
+            bottom: 4rem;
+            left: 25rem;
+        }
+        
+        img {
+            height: 40px;
+            margin-top: -8px;
+        }
+    }
+
+    .df-btn {
         button {
             position: fixed;
             bottom: 4rem;

@@ -1,16 +1,30 @@
 .chat {
-    height: 37rem;
-    width: 55rem;
-    position: fixed;
-    right: 29rem;
-    bottom: 11rem;
-    padding: 2rem;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    .df {
+        right: 29rem;
+        bottom: 11rem;
+        height: 45rem;
+        width: 55rem;
+        padding: 2rem;
+        position: fixed;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .rasa {
+        left: 25rem;
+        bottom: 11rem;
+        height: 45rem;
+        width: 55rem;
+        padding: 2rem;
+        position: fixed;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    }
 
     .chatbot {
-        min-height: 28rem;
+        min-height: 36rem;
         max-height: 28rem;
         overflow-x: hidden;
         overflow-y: auto;

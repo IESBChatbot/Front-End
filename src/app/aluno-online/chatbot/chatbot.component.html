@@ -1,59 +1,61 @@
 <div class="chat">
-  <div class="chatbot" id="msgContainer">
-    <div class="row mb--16" *ngFor="let i of conversa">
-      <div class="col-sm-2" *ngIf="i.tulio">
-        <div class="rounded-pic">
-          <img src="../../../assets/img/robot-icon.png">
+  <div [ngClass]="tipoChatbot == 1 ? 'df' : 'rasa'">
+    <div class="chatbot" id="msgContainer">
+      <div class="row mb--16" *ngFor="let i of conversa">
+        <div class="col-sm-2" *ngIf="i.tulio">
+          <div class="rounded-pic">
+            <img src="../../../assets/img/robot-icon.png">
+          </div>
+        </div>
+  
+        <div class="col-sm-8" *ngIf="i.tulio">
+          <div class="row">
+            Túlio {{tipoChatbot == 1 ? 'Dialog Flow' : 'Rasa'}}
+          </div>
+          <div class="row dialogo">
+            {{i.texto}}
+            <ul *ngIf="i.lista.length > 0">
+              <li *ngFor="let j of i.lista">
+                {{j}}
+              </li>
+            </ul>
+          </div>
+        </div>
+  
+        <div class="col-sm-2" *ngIf="!i.tulio"></div>
+  
+        <div class="col-sm-8" *ngIf="!i.tulio">
+          <div class="row ta-right">
+            Aluno: {{matricula}}
+          </div>
+          <div class="row dialogo-aluno">
+            {{i.texto}}
+          </div>
+        </div>
+  
+        <div class="col-sm-2" *ngIf="!i.tulio">
+          <div class="rounded-pic">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
-
-      <div class="col-sm-8" *ngIf="i.tulio">
-        <div class="row">
-          Túlio
-        </div>
-        <div class="row dialogo">
-          {{i.texto}}
-          <ul *ngIf="i.lista.length > 0">
-            <li *ngFor="let j of i.lista">
-              {{j}}
-            </li>
-          </ul>
-        </div>
+    </div>
+  
+    <div class="row chatbot-input pos-rel">
+      <div class="col-sm-11">
+        <form [formGroup]="chatbotForm" (keydown.enter)="enviarMensagem(chatbotForm.get('texto').value, true, false)">
+          <mat-form-field class="width-100" appearance="outline">
+            <mat-label>Digite aqui</mat-label>
+            <input matInput formControlName="texto">
+          </mat-form-field>
+        </form>
       </div>
-
-      <div class="col-sm-2" *ngIf="!i.tulio"></div>
-
-      <div class="col-sm-8" *ngIf="!i.tulio">
-        <div class="row ta-right">
-          Aluno: {{matricula}}
-        </div>
-        <div class="row dialogo-aluno">
-          {{i.texto}}
-        </div>
-      </div>
-
-      <div class="col-sm-2" *ngIf="!i.tulio">
-        <div class="rounded-pic">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </div>
+  
+      <div class="col-sm-1 send-button">
+        <button type="button" mat-icon-button (click)="enviarMensagem(chatbotForm.get('texto').value, true, false)">
+          <mat-icon>send</mat-icon>
+        </button>
       </div>
     </div>
   </div>
-
-  <div class="row chatbot-input pos-rel">
-    <div class="col-sm-11">
-      <form [formGroup]="chatbotForm" (keydown.enter)="enviarMensagem(chatbotForm.get('texto').value)">
-        <mat-form-field class="width-100" appearance="outline">
-          <mat-label>Digite aqui</mat-label>
-          <input matInput formControlName="texto">
-        </mat-form-field>
-      </form>
-    </div>
-
-    <div class="col-sm-1 send-button">
-      <button type="button" mat-icon-button (click)="enviarMensagem(chatbotForm.get('texto').value)">
-        <mat-icon>send</mat-icon>
-      </button>
-    </div>
   </div>
-</div>

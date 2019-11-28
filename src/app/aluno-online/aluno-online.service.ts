@@ -7,9 +7,9 @@ import { environment } from 'src/environments/environment';
 })
 export class AlunoOnlineService {
 
-  constructor( private httpClient: HttpClient ) { }
+  constructor(private httpClient: HttpClient) { }
 
-  enviarMensagem(session: string, params) {
-    return this.httpClient.post(environment.api + session, params);
+  enviarMensagem(session: string, params, tipoChatbot) {
+    return tipoChatbot == 1 ? this.httpClient.post(environment.apiDF + session, params) : this.httpClient.post(environment.apiRasa + session, params);
   }
 }

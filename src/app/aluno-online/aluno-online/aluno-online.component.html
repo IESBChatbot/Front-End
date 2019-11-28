@@ -140,14 +140,24 @@
         </div>
       </div>
 
-      <div class="chatbot-btn">
-        <button class="rounded-pic" mat-fab (click)="showChatbot = !showChatbot; setLocalStorage()">
+      <div class="rasa-btn">
+        <button class="rounded-pic" mat-fab (click)="showChatbotRasa = !showChatbotRasa; setLocalStorage()">
           <img src="../../../assets/img/robot-icon.png">
         </button>
       </div>
 
-      <div *ngIf="showChatbot">
-        <app-chatbot></app-chatbot>
+      <div class="df-btn">
+        <button class="rounded-pic" mat-fab (click)="showChatbotDF = !showChatbotDF; setLocalStorage()">
+          <img src="../../../assets/img/robot-icon.png">
+        </button>
+      </div>
+
+      <div *ngIf="showChatbotDF">
+        <app-chatbot [tipoChatbot]="1"></app-chatbot>
+      </div>
+
+      <div *ngIf="showChatbotRasa">
+        <app-chatbot [tipoChatbot]="2"></app-chatbot>
       </div>
     </div>
   </div>
