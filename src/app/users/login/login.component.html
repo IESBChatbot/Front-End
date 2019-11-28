@@ -29,15 +29,14 @@
                   <mat-form-field class="width-100" appearance="outline">
                     <mat-icon matPrefix>lock</mat-icon>
                     <mat-label>Senha</mat-label>
-                    <input type="password" matInput placeholder="Placeholder">
+                    <input type="password" matInput placeholder="Placeholder" (keydown.enter)="irParaAlunoOnline()">
                   </mat-form-field>
                 </div>
               </div>
 
               <div class="row fx jc-c">
                 <div class="col-sm-8">
-                  <button class="width-100" mat-raised-button color="warn" (click)="irParaAlunoOnline()"
-                    (keydown.enter)="irParaAlunoOnline()">Entrar</button>
+                  <button class="width-100" mat-raised-button color="warn" (click)="irParaAlunoOnline()">Entrar</button>
                 </div>
               </div>
 

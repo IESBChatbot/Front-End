@@ -3,8 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  apiRasa: 'http://2c04b437.ngrok.io/rasa/text/',
-  apiDF: 'http://2c04b437.ngrok.io/dialogflow/text/',
+  apiRasa: 'http://1a4530e4.ngrok.io/rasa/text/',
+  apiDF: 'http://1a4530e4.ngrok.io/dialogflow/text/',
   production: false
 };
 

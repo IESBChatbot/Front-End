@@ -42,7 +42,7 @@ export class ChatbotComponent implements OnInit {
       }
 
       setTimeout(() => {
-        this.container = document.getElementById("msgContainer");
+        this.container = document.getElementById("msgContainer" + this.tipoChatbot);
         this.container.scrollTop = this.container.scrollHeight;
       }, 100);
 
@@ -57,6 +57,10 @@ export class ChatbotComponent implements OnInit {
 
       this.conversa.push({ texto: 'Carregando...', tulio: true, lista: [] });
       this.chatbotForm.controls['texto'].disable();
+      setTimeout(() => {
+        this.container = document.getElementById("msgContainer" + this.tipoChatbot);
+        this.container.scrollTop = this.container.scrollHeight;
+      }, 100);
 
       this.alunoOnlineService.enviarMensagem(localStorage.getItem("sessionKey"), dados, this.tipoChatbot)
         .subscribe((x: any) => {
@@ -70,7 +74,7 @@ export class ChatbotComponent implements OnInit {
           this.conversa.push({ texto: texto, tulio: true, lista: mensagem });
 
           setTimeout(() => {
-            this.container = document.getElementById("msgContainer");
+            this.container = document.getElementById("msgContainer" + this.tipoChatbot);
             this.container.scrollTop = this.container.scrollHeight;
           }, 100);
 

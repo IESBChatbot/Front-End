@@ -1,6 +1,6 @@
 <div class="chat">
   <div [ngClass]="tipoChatbot == 1 ? 'df' : 'rasa'">
-    <div class="chatbot" id="msgContainer">
+    <div class="chatbot" id="msgContainer{{tipoChatbot}}">
       <div class="row mb--16" *ngFor="let i of conversa">
         <div class="col-sm-2" *ngIf="i.tulio">
           <div class="rounded-pic">
